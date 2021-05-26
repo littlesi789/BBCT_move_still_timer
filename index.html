@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Contact Tracing Data Collection</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">BLE Contact Tracing Data Collection</h1>
+            <div class="border rounded p-3">
+                <div id="entry">
+                    <div>
+                        Which direction would you like to test across?
+                        <label for="x"
+                            ><input
+                                type="radio"
+                                name="dir"
+                                id="x"
+                                value="x"
+                                checked
+                            />X</label
+                        >
+                        <label for="y"
+                            ><input type="radio" name="dir" id="y" value="y" />Y</label
+                        >
+                        <label for="constValInput">
+                            What value?
+                            <input
+                                type="number"
+                                name="constVal"
+                                id="constValInput"
+                                value="0"
+                            />
+                        </label>
+                    </div>
+                    <hr />
+                    <div>
+                        What <span id = "dirSpan">Y</span> values would you like to test? (comma
+                        separated numbers in order)
+                        <input type="text" id="rangeValues" placeholder="0, 2, 4, 6, 8" />
+                    </div>
+                    <hr />
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button id="beginButton" class="btn btn-success">
+                            Begin Data Collection
+                        </button>
+                    </div>
+                </div>
+                <div id="collection">
+                    <div class="text-center">
+                        <button class="btn btn-primary" id="downloadButton">
+                            Stop collection and download data
+                        </button>
+                        <h3>
+                            Currently collecting for <span id="currX"> </span>,
+                            <span id="currY"></span> facing <span id="currDir"></span>.
+                        </h3>
+                        <h4 id="timer">0.00</h4>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <button class="btn btn-success" id="collectStart">
+                                Start
+                            </button>
+                            <button class="btn btn-danger" id="collectStop">Stop</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table mt-3">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Timestamp</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>Direction</th>
+                        <th>s/e</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        <script src="app.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
