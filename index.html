@@ -15,40 +15,9 @@
     </head>
     <body>
         <div class="container">
-            <h1 class="text-center">BLE Contact Tracing Data Collection</h1>
+            <h1 class="text-center">BLE Contact Tracing Still/Move Timer</h1>
             <div class="border rounded p-3">
                 <div id="entry">
-                    <div>
-                        Which direction would you like to test across?
-                        <label for="x"
-                            ><input
-                                type="radio"
-                                name="dir"
-                                id="x"
-                                value="x"
-                                checked
-                            />X</label
-                        >
-                        <label for="y"
-                            ><input type="radio" name="dir" id="y" value="y" />Y</label
-                        >
-                        <label for="constValInput">
-                            What value?
-                            <input
-                                type="number"
-                                name="constVal"
-                                id="constValInput"
-                                value="0"
-                            />
-                        </label>
-                    </div>
-                    <hr />
-                    <div>
-                        What <span id = "dirSpan">Y</span> values would you like to test? (comma
-                        separated numbers in order)
-                        <input type="text" id="rangeValues" placeholder="0, 2, 4, 6, 8" />
-                    </div>
-                    <hr />
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button id="beginButton" class="btn btn-success">
                             Begin Data Collection
@@ -60,10 +29,12 @@
                         <button class="btn btn-primary" id="downloadButton">
                             Stop collection and download data
                         </button>
-                        <h3>
+                        <p style="font-size:18.0pt">Date/Time: <span id="datetime" ></span></p>
+                        
+                        <!-- <h3>
                             Currently collecting for <span id="currX"> </span>,
                             <span id="currY"></span> facing <span id="currDir"></span>.
-                        </h3>
+                        </h3> -->
                         <h4 id="timer">0.00</h4>
                         <div class="d-grid gap-2 col-6 mx-auto">
                             <button class="btn btn-success" id="collectStart">
@@ -79,10 +50,10 @@
                     <tr>
                         <th>Index</th>
                         <th>Timestamp</th>
-                        <th>X</th>
+                        <!-- <th>X</th>
                         <th>Y</th>
                         <th>Direction</th>
-                        <th>s/e</th>
+                        <th>s/e</th> -->
                     </tr>
                 </thead>
                 <tbody id="table-body"></tbody>
