@@ -3,21 +3,6 @@ document.getElementById('collectStart').addEventListener('click', startButton)
 document.getElementById('collectStop').addEventListener('click', stopButton)
 document.getElementById('downloadButton').addEventListener('click', downloadCSV)
 
-// document.getElementById('x').addEventListener('change', testingAcross, false)
-// document.getElementById('y').addEventListener('change', testingAcross, false)
-
-// function testingAcross() {
-//     dir = document.querySelector('input[name="dir"]:checked').value
-//     if (dir == 'x') {
-//         document.getElementById('dirSpan').innerHTML = 'Y'
-//     } else {
-//         document.getElementById('dirSpan').innerHTML = 'X'
-//     }
-// }
-
-// var dt = new Date();
-// document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
-
 function Timer() {
     var dt=new Date()
     document.getElementById('datetime').innerHTML=dt.toDateString() + "-"+ dt.toLocaleTimeString();
@@ -38,20 +23,6 @@ let timerStart = Date.now()
 let timerInterval
 
 function switchDataCollect() {
-    // constDir = document.querySelector('input[name="dir"]:checked').value
-    // if (constDir === 'x') {
-    //     xCoords = Number(document.getElementById('constValInput').value)
-    //     yCoords = document
-    //         .getElementById('rangeValues')
-    //         .value.split(',')
-    //         .map((num) => Number(num))
-    // } else {
-    //     yCoords = Number(document.getElementById('constValInput').value)
-    //     xCoords = document
-    //         .getElementById('rangeValues')
-    //         .value.split(',')
-    //         .map((num) => Number(num))
-    // }
     document.getElementById('entry').style.display = 'none'
     document.getElementById('collection').style.display = 'block'
     document.getElementById('currX').innerText =
